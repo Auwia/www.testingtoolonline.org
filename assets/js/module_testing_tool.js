@@ -1,7 +1,7 @@
 var testApp = angular.module('testApp', ['ngCookies', 'ui.bootstrap']);
 // register service worker
 if ('serviceWorker' in navigator) {
-	navigator.serviceWorker.register('service_worker.js').then(function(reg){
+	navigator.serviceWorker.register('/assets/service_worker.js', { scope: '/' }).then(function(reg){
 		if(reg.installing) {
 			console.log('Service worker installing');
 		} else if(reg.waiting) {
