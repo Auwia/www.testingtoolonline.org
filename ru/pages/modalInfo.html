@@ -1,0 +1,188 @@
+<!-- Modal INFO-->
+<div class="modal-header">
+	<h3 class="modal-title">Легенда формата</h3>
+</div>
+<div class="modal-body">
+	<table>
+		<thead>
+			<tr>
+				<th>Вход</th>
+				<th>Пример</th>
+				<th>Описание</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>YYYY</td>
+				<td>2014</td>
+				<td>4- или 2-значный год</td>
+			</tr>
+			<tr>
+				<td>YY</td>
+				<td>14</td>
+				<td>2-значный год</td>
+			</tr>
+			<tr>
+				<td>Y</td>
+				<td>-25</td>
+				<td>Год с любым количеством цифр и знаком</td>
+			</tr>
+			<tr>
+				<td>Q</td>
+				<td>1..4</td>
+				<td>Квартал года. Устанавливает месяц на первый месяц квартала.</td>
+			</tr>
+			<tr>
+				<td>M MM</td>
+				<td>1..12</td>
+				<td>Номер месяца</td>
+			</tr>
+			<tr>
+				<td>MMM MMMM</td>
+				<td>Jan..December</td>
+				<td>Название месяца в локали, установленной moment.locale ()</td>
+			</tr>
+			<tr>
+				<td>D DD</td>
+				<td>1..31</td>
+				<td>День месяца</td>
+			</tr>
+			<tr>
+				<td>Do</td>
+				<td>1st..31st</td>
+				<td>День месяца с порядковым номером</td>
+			</tr>
+			<tr>
+				<td>DDD DDDD</td>
+				<td>1..365</td>
+				<td>День года</td>
+			</tr>
+			<tr>
+				<td>X</td>
+				<td>1410715640.579</td>
+				<td>Отметка времени Unix</td>
+			</tr>
+			<tr>
+				<td>x</td>
+				<td>1410715640579</td>
+				<td>Метка времени Unix ms</td>
+			</tr>
+			<tr>
+				<td>gggg</td>
+				<td>2014</td>
+				<td>Местный 4-значный год недели</td>
+			</tr>
+			<tr>
+				<td>gg</td>
+				<td>14</td>
+				<td>Местный год недели из 2 цифр</td>
+			</tr>
+			<tr>
+				<td>w ww</td>
+				<td>1..53</td>
+				<td>Региональная неделя года</td>
+			</tr>
+			<tr>
+				<td>e</td>
+				<td>0..6</td>
+				<td>Местный день недели</td>
+			</tr>
+			<tr>
+				<td>ddd dddd</td>
+				<td>Mon...Sunday</td>
+				<td>Название дня в локали, установленной в moment.locale()</td>
+			</tr>
+			<tr>
+				<td>GGGG</td>
+				<td>2014</td>
+				<td>Год недели по ISO 4</td>
+			</tr>
+			<tr>
+				<td>GG</td>
+				<td>14</td>
+				<td>Год недели по ISO из 2 цифр</td>
+			</tr>
+			<tr>
+				<td>W WW</td>
+				<td>1..53</td>
+				<td>Неделя года по ISO</td>
+			</tr>
+			<tr>
+				<td>E</td>
+				<td>1..7</td>
+				<td>День недели ISO</td>
+			</tr>
+			<tr>
+				<td>L</td>
+				<td>04/09/1986</td>
+				<td>Дата (в местном формате)</td>
+			</tr>
+			<tr>
+				<td>LL</td>
+				<td>September 4 1986</td>
+				<td>Название месяца, день месяца, год</td>
+			</tr>
+			<tr>
+				<td>LLL</td>
+				<td>September 4 1986 8:30 PM</td>
+				<td>Название месяца, день месяца, год, время</td>
+			</tr>
+			<tr>
+				<td>LLLL</td>
+				<td>Thursday, September 4 1986 8:30 PM</td>
+				<td>День недели, название месяца, день месяца, год, время</td>
+			</tr>
+			<tr>
+				<td>LT</td>
+				<td>08:30 PM</td>
+				<td>Время (без секунд)</td>
+			</tr>
+			<tr>
+				<td>LTS</td>
+				<td>08:30:00 PM</td>
+				<td>Время (с секундами)</td>
+			</tr>
+			<tr>
+				<td>H HH</td>
+				<td>0..23</td>
+				<td>Часы (24-часовое время)</td>
+			</tr>
+			<tr>
+				<td>h hh</td>
+				<td>1..12</td>
+				<td>Часы (12 часов используется с A.)</td>
+			</tr>
+			<tr>
+				<td>k kk</td>
+				<td>1..24</td>
+				<td>Часы (24 часа от 1 до 24) </td>
+			</tr>
+			<tr>
+				<td>a A</td>
+				<td>am pm</td>
+				<td>Post или ante meridiem (обратите внимание, что один символ p также считается действительным)</td>
+			</tr>
+			<tr>
+				<td>m mm</td>
+				<td>0..59</td>
+				<td>Минуты</td>
+			</tr>
+			<tr>
+				<td>s ss</td>
+				<td>0..59</td>
+				<td>Секунды</td>
+			</tr>
+			<tr>
+				<td>S SS SSS</td>
+				<td>0..999</td>
+				<td>Доли секунды</td>
+			</tr>
+			<tr>
+				<td>Z ZZ</td>
+				<td>+12:00</td>
+				<td>Смещение от всемирного координированного времени как + -HH: мм, + -HHmm или Z</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<!-- Modal end-->

@@ -1,0 +1,5 @@
+# History
+
+## 2019-01-01, version 1.9
+
+- First fully usable version of the Testing Tool Online.

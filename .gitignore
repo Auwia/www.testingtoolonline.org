@@ -1,0 +1,7 @@
+# macOS
+.DS_Store
+# build/cache future
+node_modules/
+dist/
+.cache/
+.env

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Wie man Linux-Geräte partitioniert und beschädigte Sektoren verwaltet.">
+    <meta name="keywords" content="bad sectors, partitioning, Linux">
+    <meta name="author" content="Massimo Manganiello">
+    <meta name="theme-color" content="#f7f7f7"/>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="apple-touch-icon" href="/img/apple-icon-180x180.ico">
+    <link rel="manifest" href="/manifest.json">
+    <title>Erkennen und Beheben beschädigter Sektoren</title>
+    <link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+    <header class="header">
+        <a href="/de/pages/intro.html">
+            <img alt="Testing Tool Online" title="Testing Tool Online" src="/img/logo.svg" id="logo" width="100%" height="100%" class="logo">
+        </a>
+        <nav class="menu">
+            <ul>
+                <li><a href="/de/pages/intro.html" title="German">DE</a></li>
+                <li><a href="/en/pages/intro.html" title="English">EN</a></li>
+                <li><a href="/fr/pages/intro.html" title="French">FR</a></li>
+                <li><a href="/pt/pages/intro.html" title="Portuguese">PT</a></li>
+                <li><a href="/it/pages/intro.html" title="Italian">IT</a></li>
+                <li><a href="/sp/pages/intro.html" title="Spanish">SP</a></li>
+                <li><a href="/ru/pages/intro.html" title="Russian">RU</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main">
+        <section>
+            <article style="width: 70%; margin: auto;">
+                <header>
+                    <h1 style="text-align: center;">Erkennen und Beheben beschädigter Sektoren</h1>
+                </header>
+                <h2>1. Beschädigte Sektoren erkennen</h2>
+                <p>Der Befehl badblocks untersucht Speichergeräte.</p>
+                <pre><code>sudo badblocks -sv /dev/sdX</code></pre>
+                <pre><code>sudo badblocks -wvs /dev/sdX</code></pre>
+                <h3>2. Beschädigte Sektoren speichern</h3>
+                <p>Speichern Sie die beschädigten Sektoren in einer Datei:</p>
+                <pre><code>sudo badblocks -o badblocks.txt /dev/sdX</code></pre>
+                <h2>3. Erstellen eines Dateisystems</h2>
+                <p>Erstellen Sie ein Dateisystem, das beschädigte Sektoren ausschließt.</p>
+                <pre><code>sudo mkfs.ext4 -l badblocks.txt /dev/sdX1</code></pre>
+                <pre><code>sudo mkfs.ext4 /dev/sdX1</code></pre>
+                <h2>4. Partition einhängen und testen</h2>
+                <pre><code>sudo mount /dev/sdX1 /mnt</code></pre>
+                <pre><code>sudo dd if=/dev/zero of=/mnt/testfile bs=1M count=100</code></pre>
+                <pre><code>sudo umount /mnt</code></pre>
+                <h2>5. Überwachen beschädigter Sektoren</h2>
+                <pre><code>sudo badblocks -sv /dev/sdX</code></pre>
+                <h2>Recommendations</h2>
+                <ul>
+                    <li>Ersetzen Sie Geräte mit vielen beschädigten Sektoren.</li>
+                    <li>Sichern Sie Ihre Daten regelmäßig.</li>
+                </ul>
+            </article>
+        </section>
+    </main>
+    <footer class="header" style="text-align: center; padding: 20px; background-color: #333; color: white;">
+        Copyright 2020-2025 by <a href="mailto:massimo.manganiello@gmail.com" style="color: lightblue;">Massimo Manganiello</a>.
+        All Rights Reserved.
+    </footer>
+</body>
+</html>

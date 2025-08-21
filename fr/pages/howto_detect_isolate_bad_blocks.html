@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Comment partitionner des appareils Linux et gérer les secteurs défectueux.">
+    <meta name="keywords" content="bad sectors, partitioning, Linux">
+    <meta name="author" content="Massimo Manganiello">
+    <meta name="theme-color" content="#f7f7f7"/>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="apple-touch-icon" href="/img/apple-icon-180x180.ico">
+    <link rel="manifest" href="/manifest.json">
+    <title>Détection et Réparation des Secteurs Défectueux</title>
+    <link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+    <header class="header">
+        <a href="/fr/pages/intro.html">
+            <img alt="Testing Tool Online" title="Testing Tool Online" src="/img/logo.svg" id="logo" width="100%" height="100%" class="logo">
+        </a>
+        <nav class="menu">
+            <ul>
+                <li><a href="/de/pages/intro.html" title="German">DE</a></li>
+                <li><a href="/en/pages/intro.html" title="English">EN</a></li>
+                <li><a href="/fr/pages/intro.html" title="French">FR</a></li>
+                <li><a href="/pt/pages/intro.html" title="Portuguese">PT</a></li>
+                <li><a href="/it/pages/intro.html" title="Italian">IT</a></li>
+                <li><a href="/sp/pages/intro.html" title="Spanish">SP</a></li>
+                <li><a href="/ru/pages/intro.html" title="Russian">RU</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main">
+        <section>
+            <article style="width: 70%; margin: auto;">
+                <header>
+                    <h1 style="text-align: center;">Détection et Réparation des Secteurs Défectueux</h1>
+                </header>
+                <h2>1. Détection des Secteurs Défectueux</h2>
+                <p>La commande badblocks examine les périphériques de stockage.</p>
+                <pre><code>sudo badblocks -sv /dev/sdX</code></pre>
+                <pre><code>sudo badblocks -wvs /dev/sdX</code></pre>
+                <h3>2. Sauvegarder les Secteurs Défectueux</h3>
+                <p>Enregistrez les secteurs défectueux dans un fichier:</p>
+                <pre><code>sudo badblocks -o badblocks.txt /dev/sdX</code></pre>
+                <h2>3. Créer un Système de Fichiers</h2>
+                <p>Créez un système de fichiers excluant les secteurs défectueux.</p>
+                <pre><code>sudo mkfs.ext4 -l badblocks.txt /dev/sdX1</code></pre>
+                <pre><code>sudo mkfs.ext4 /dev/sdX1</code></pre>
+                <h2>4. Monter et Tester</h2>
+                <pre><code>sudo mount /dev/sdX1 /mnt</code></pre>
+                <pre><code>sudo dd if=/dev/zero of=/mnt/testfile bs=1M count=100</code></pre>
+                <pre><code>sudo umount /mnt</code></pre>
+                <h2>5. Surveiller les Secteurs Défectueux</h2>
+                <pre><code>sudo badblocks -sv /dev/sdX</code></pre>
+                <h2>Recommendations</h2>
+                <ul>
+                    <li>Remplacez les appareils avec de nombreux secteurs défectueux.</li>
+                    <li>Sauvegardez vos données régulièrement.</li>
+                </ul>
+            </article>
+        </section>
+    </main>
+    <footer class="header" style="text-align: center; padding: 20px; background-color: #333; color: white;">
+        Copyright 2020-2025 by <a href="mailto:massimo.manganiello@gmail.com" style="color: lightblue;">Massimo Manganiello</a>.
+        All Rights Reserved.
+    </footer>
+</body>
+</html>
