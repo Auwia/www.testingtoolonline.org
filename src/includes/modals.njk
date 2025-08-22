@@ -1,0 +1,61 @@
+{% raw %}
+<script type="text/ng-template" id="modalTextFormatHelper.html">
+  <div class="modal-header"><h3>Text format</h3></div>
+  <div class="modal-body">
+    <label>Fixed string: <input ng-model="fixedString" /></label><br />
+    <label>Prefix: <input ng-model="prefixLen" /></label><br />
+    <label>Counter length: <input type="number" ng-model="counterLen" /></label><br />
+    <label>Suffix: <input ng-model="suffixLen" /></label><br />
+    <label><input type="checkbox" ng-model="fillZeroAct" /> Fill with zero</label><br />
+    <p>Remaining: {{getRemaining()}}</p>
+    <p>Usage: {{getUsage()}}</p>
+  </div>
+  <div class="modal-footer">
+    <button ng-click="apply()">Apply</button>
+  </div>
+</script>
+
+<script type="text/ng-template" id="modalNumberFormatHelper.html">
+  <div class="modal-header"><h3>Number format</h3></div>
+  <div class="modal-body">
+    <label>Range from: <input type="number" ng-model="rangeFrom" /></label><br />
+    <label>Range to: <input type="number" ng-model="rangeTo" /></label><br />
+    <label>Decimal separator: <input ng-model="decimal_separator" /></label><br />
+    <label># decimals: <input type="number" ng-model="decimalN" /></label><br />
+    <p>Remaining: {{getRemaining()}}</p>
+    <p>Usage: {{getUsage()}}</p>
+  </div>
+  <div class="modal-footer">
+    <button ng-click="apply()">Apply</button>
+  </div>
+</script>
+
+<script type="text/ng-template" id="modalDateFormatHelper.html">
+  <div class="modal-header"><h3>Date format</h3></div>
+  <div class="modal-body">
+    <label>Date format: <input ng-model="rangeDateFormat" /></label><br />
+    <label>From: <input type="date" ng-model="dateRangeFrom" /></label><br />
+    <label>To: <input type="date" ng-model="dateRangeTo" /></label><br />
+    <p>Remaining: {{getRemaining()}}</p>
+    <p>Usage: {{getUsage()}}</p>
+  </div>
+  <div class="modal-footer">
+    <button ng-click="apply()">Apply</button>
+  </div>
+</script>
+
+<script type="text/ng-template" id="modalHelp.html">
+  <div class="modal-header"><h3>Help</h3></div>
+  <div class="modal-body">
+    <p>Here goes your help content</p>
+  </div>
+</script>
+
+<script type="text/ng-template" id="modalInfo.html">
+  <div class="modal-header"><h3>Info</h3></div>
+  <div class="modal-body">
+    <p>Here goes your info content</p>
+  </div>
+</script>
+{% endraw %}
+
