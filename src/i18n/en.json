@@ -1,0 +1,26 @@
+{
+"siteTitle": "Testing Tool Online",
+"nav": {"home": "Home", "howto": "Come si fa", "generator": "Generatore"},
+"pages": {
+"fileBatchGenerator": {
+"title": "File Batch Generator",
+"heading": "Genera file batch",
+"lead": "Crea rapidamente file di test."
+},
+"intro": {"title": "Introduzione", "heading": "Benvenuto"}
+},
+"generate_file": "Generate File",
+"file_name": "File Name",
+"type": "Select record length type",
+"fixed": "Fixed",
+"variable": "Variable",
+"separator": "Separator",
+"eol": "End of line",
+"custom": "Custom",
+"#records": "Number of records to generate",
+"#attributes": "Number of attributes to generate",
+"#columns": "Number of columns",
+"add": "Add",
+"edit": "Edit",
+"delete": "Delete"
+}

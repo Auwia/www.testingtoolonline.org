@@ -74,7 +74,7 @@ title: "{{ i18n[lang].pages.fileBatchGenerator.title }}"
     </section>
 
     <aside>
-      <button ng-style="myForm.$valid ? {color:'#0645AD'} : {'color': 'red' }"
+      <button class="btn btn-primary" ng-style="myForm.$valid ? {color:'#0645AD'} : {'color': 'red' }"
               type="submit" ng-click="generateFile()" ng-disabled="myForm.$invalid">
         {{'generate_file' | translate}}
       </button>

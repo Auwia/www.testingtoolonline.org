@@ -8,5 +8,9 @@
 "lead": "Crea rapidamente file di test."
 },
 "intro": {"title": "Introduzione", "heading": "Benvenuto"}
-}
+},
+"generate_file": "Genera File",
+"add": "Aggiungi",
+"edit": "Edita",
+"delete": "Cancella"
 }
