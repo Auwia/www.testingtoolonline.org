@@ -1,0 +1,22 @@
+{
+  "name": "Testing Tool Online",
+  "short_name": "TTO",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0645AD",
+  "icons": [
+    {
+      "src": "/favicon-96x96.ico",
+      "sizes": "96x96",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/favicon-32x32.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    }
+  ]
+}
+

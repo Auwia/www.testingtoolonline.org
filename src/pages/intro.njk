@@ -1,0 +1,12 @@
+---
+layout: base.njk
+pagination:
+  data: languages
+  size: 1
+  alias: lang
+permalink: "/{{ lang }}/pages/intro.html"
+pageSlug: "intro"
+title: "{{ i18n[lang].pages.intro.title }}"
+---
+<h1>{{ i18n[lang].pages.intro.heading }}</h1>
+<p>Contenuto introduttivo…</p>

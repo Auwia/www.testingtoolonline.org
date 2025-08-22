@@ -1,0 +1,17 @@
+{
+  "en": {
+    "siteTitle": "Testing Tool Online",
+    "siteTagline": "Batch file generator",
+    "meta": {
+      "description": "Testing Tool Online is a free tool to generate batch files for test data."
+    }
+  },
+  "it": {
+    "siteTitle": "Testing Tool Online",
+    "siteTagline": "Generatore di file batch",
+    "meta": {
+      "description": "Testing Tool Online è un tool gratuito per generare file batch di test."
+    }
+  }
+}
+

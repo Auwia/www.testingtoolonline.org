@@ -1,0 +1,12 @@
+{
+"siteTitle": "Testing Tool Online",
+"nav": {"home": "Home", "howto": "Come si fa", "generator": "Generatore"},
+"pages": {
+"fileBatchGenerator": {
+"title": "File Batch Generator",
+"heading": "Genera file batch",
+"lead": "Crea rapidamente file di test."
+},
+"intro": {"title": "Introduzione", "heading": "Benvenuto"}
+}
+}

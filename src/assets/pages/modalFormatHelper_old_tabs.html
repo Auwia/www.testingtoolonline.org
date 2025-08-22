@@ -1,0 +1,131 @@
+{% raw %}
+<div ng-controller="modalCtrl">
+	<div class="modal-header">
+		<h3 class="modal-title">Format legend</h3>
+	</div>
+	<div class="modal-body">
+		<div class="container">
+			<ul class="nav nav-tabs">
+				<li ng-class="{active: records[cur_index].type == 'text'}"><a data-toggle="tab" href="#text"
+						name="text">Text</a></li>
+				<li ng-class="{active: records[cur_index].type == 'number'}"><a data-toggle="tab" href="#number"
+						name="number">Number</a></li>
+				<li ng-class="{active: records[cur_index].type == 'date'}"><a data-toggle="tab" href="#date"
+						name="data">Date</a></li>
+			</ul>
+			<div class="tab-content">
+				<div id="text"
+					ng-class="{'tab-pane fade in active': records[cur_index].type == 'text', 'tab-pane': records[cur_index].type != 'text'}">
+					<ng-form name="myModalText">
+						<h3>RANDOM text</h3>
+						<table>
+							<tr>
+								<td><input type="checkbox" ng-model="prefixAct" ng-change="reset()"
+										ng-disabled="getUsage() >= max_length" />Prefix:
+								</td>
+								<td><input ng-model="prefixLen" type="text" ng-disabled="!prefixAct"
+										maxlength="{{max_length-suffixLen.length-counterLen}}"
+										ng-required="prefixAct" />
+								</td>
+								<td>Length: {{prefixLen.length}}</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" ng-model="counterAct" ng-change="reset()"
+										ng-disabled="getUsage() >= max_length" />Counter
+									Length:</td>
+								<td><input ng-model="counterLen" type="number" ng-disabled="!counterAct"
+										max="{{max_length-prefixLen.length-suffixLen.length}}" ng-init="counterLen=1"
+										ng-click="counter()" ng-required="counterAct" min="1" /></td>
+								<td>Length: {{counterLen}}</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" ng-model="suffixAct" ng-change="reset()"
+										ng-disabled="getUsage() >= max_length" />Suffix:
+								</td>
+								<td><input ng-model="suffixLen" type="text" ng-disabled="!suffixAct"
+										maxlength="{{max_length-prefixLen.length-counterLen}}"
+										ng-required="suffixAct" />
+								</td>
+								<td>Length: {{suffixLen.length}}</td>
+							</tr>
+						</table>
+					</ng-form>
+				</div>
+				<div id="number"
+					ng-class="{'tab-pane fade in active': records[cur_index].type == 'number', 'tab-pane': records[cur_index].type != 'number'}">
+					<ng-form role="form" name="myModalNumber">
+						<h3>RANDOM number</h3>
+						<table>
+							<tr>
+								<td><input type="checkbox" ng-model="rangeAct" ng-change="reset()"
+										ng-disabled="getUsage() >= max_length" />Range
+									From:</td>
+								<td><input name="rangeFrom" ng-model="rangeFrom" type="number" ng-disabled="!rangeAct"
+										max="{{rangeTo}}" ng-required="rangeAct || rangeFrom"
+										ng-class="{red: myModalNumber.rangeFrom.$invalid}" /></td>
+								<td>Range To:</td>
+								<td><input name="rangeTo" ng-model="rangeTo" type="number" ng-disabled="!rangeAct"
+										min="{{rangeFrom}}" ng-required="rangeAct || rangeTo"
+										ng-class="{red: myModalNumber.rangeTo.$invalid}" /></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" ng-model="decimalAct" ng-change="reset()"
+										ng-disabled="getUsage() >= max_length" />Decimal
+									Separator:</td>
+								<td><input name="separator" ng-model="separator" type="text" maxlength="1"
+										ng-disabled="!decimalAct" ng-required="decimalAct || separator"
+										ng-class="{red: myModalNumber.separator.$invalid}" /></td>
+								<td>N. of decimals:</td>
+								<td><input ng-model="decimalN" type="number" ng-disabled="!decimalAct" min="0"
+										ng-required="decimalAct" max="{{MAX}}" /></td>
+								<td></td>
+							</tr>
+						</table>
+					</ng-form>
+				</div>
+				<div id="date"
+					ng-class="{'tab-pane fade in active': records[cur_index].type == 'date', 'tab-pane': records[cur_index].type != 'date'}">
+					<ng-form role="form" name="myModalDate">
+						<h3>RANDOM date</h3>
+						<div>
+							<div>
+								<input type="checkbox" ng-model="dateRangeFormatAct" ng-change="reset()" />Format:
+								<input type="text" name="rangeDateFormat" ng-model="rangeDateFormat"
+									ng-required="rangeDateFormat || dateRangeFormatAct"
+									ng-class="{red: myModalDate.rangeDateFormat.$invalid}"
+									ng-init="rangeDateFormat='yyyyMMdd'" ng-disabled="!dateRangeFormatAct"
+									maxlength="{{length}}" /><br>
+							</div>
+							<div>
+								<input type="checkbox" ng-model="dateRangeAct" ng-change="reset()" />From: <input
+									type="date" max="{{dateRangeTo| date:'yyyy-MM-dd'}}" ng-model="dateRangeFrom"
+									name="dateRangeFrom" ng-required="dateRangeAct || dateRangeFrom"
+									ng-class="{red: myModalDate.dateRangeFrom.$invalid}" ng-disabled="!dateRangeAct" />
+								To: <input ng-model="dateRangeTo" name="dateRangeTo" type="date"
+									ng-required="dateRangeAct || dateRangeTo"
+									ng-class="{red: myModalDate.dateRangeTo.$invalid}" ng-disabled="!dateRangeAct"
+									min="{{dateRangeFrom| date:'yyyy-MM-dd'}}" />
+								<div ng-init="dateRangeFrom = getDate()">Example:
+									{{dateRangeFrom | date: rangeDateFormat}}</div>
+							</div>
+						</div>
+					</ng-form>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal-footer">
+			<span class="pull-left" ng-class="getColor()" ng-model="max_length">
+				Max Length:
+				{{max_length}} | Usage:
+				{{getUsage()}} | Remaining: {{getRemaining()}}
+			</span>
+			<button type="button" class="btn btn-primary" ng-model="cur_index" data-dismiss="modal"
+				ng-disabled="myModalText.$invalid || myModalNumber.$invalid || myModalDate.$invalid || getRemaining() < 0"
+				ng-click="apply1($index)">Apply
+			</button>
+		</div>
+	</div>
+</div>
+{% endraw %}

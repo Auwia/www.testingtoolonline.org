@@ -1,6 +1,0 @@
-User-agent: googlebot
-User-Agent: bingbot
-User-agent: MSNPTC
-User-agent: Applebot
-User-Agent: *
-Allow: /

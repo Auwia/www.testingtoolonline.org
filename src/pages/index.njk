@@ -1,0 +1,53 @@
+---
+layout: base.njk
+pagination:
+  data: languages
+  size: 1
+  alias: lang
+permalink: "/{{ lang }}/pages/index.html"
+pageSlug: "index"
+title: "{{ i18n[lang].siteTitle }}"
+---
+
+<h1 class="page-title">File Batch Generator</h1>
+
+<div class="container">
+  <div class="main gen-table-wrap">
+    <p class="lead">
+      File Batch Generator Online is a web-based tool to create automatically batch file...
+    </p>
+
+    {# blocco demo principale (quello già presente della tua app) #}
+    {{ content | safe }}
+
+    <p><a class="btn" href="/{{ lang }}/pages/file_batch_generator.html">Let's start</a></p>
+  </div>
+
+  {# sezioni promo come in home #}
+  <section class="gen-table-wrap">
+    <h2>Useful</h2>
+    <p>Are you bored to mock-up input files manually!?</p>
+    <img src="/assets/img/file_configuration.png" alt="file config" width="359" height="233" loading="lazy" decoding="async">
+    <img src="/assets/img/attributes_view.png" alt="attributes view" width="755" height="270" loading="lazy" decoding="async">
+    <p><a class="btn" href="/{{ lang }}/pages/file_batch_generator.html">Let's start</a></p>
+  </section>
+
+  <section class="gen-table-wrap">
+    <h2>Fast</h2>
+    <p>Extremely fast: 1.000.000 records simulation in less than 1 minute.</p>
+    <img src="/assets/img/file_generated.png" alt="generated example" width="645" height="509" loading="lazy" decoding="async">
+    <p><a class="btn" href="/{{ lang }}/pages/file_batch_generator.html">Let's start</a></p>
+  </section>
+
+  <section class="gen-table-wrap">
+    <h2>Usability</h2>
+    <p>Save, load and modify your own work when you want fastly.</p>
+    <img src="/assets/img/save_load.png" alt="Save/load" width="163" height="77" loading="lazy" decoding="async">
+    <p><a class="btn" href="/{{ lang }}/pages/file_batch_generator.html">Let's start</a></p>
+  </section>
+
+  <section class="gen-table-wrap">
+    <h2>Security</h2>
+    <p>Files are generated locally, no server needed. Secure by design.</p>
+  </section>
+</div>

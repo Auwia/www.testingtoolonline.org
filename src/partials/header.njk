@@ -1,0 +1,26 @@
+{# src/partials/header.njk #}
+<header class="site-header">
+  <div class="wrap">
+    {# slug della pagina corrente o 'index' se mancante #}
+    {% set currentSlug = pageSlug | default('index') %}
+
+    <a class="logo" href="/{{ lang }}/pages/index.html">
+      {{ i18n[lang].siteTitle }}
+    </a>
+
+    <nav>
+      <a href="/{{ lang }}/pages/index.html">{{ i18n[lang].nav.home }}</a>
+      <a href="/{{ lang }}/pages/intro.html">{{ i18n[lang].nav.howto }}</a>
+      <a href="/{{ lang }}/pages/file_batch_generator.html">{{ i18n[lang].nav.generator }}</a>
+    </nav>
+
+    <ul class="lang-switch">
+      {% for L in languages %}
+        <li>
+          <a href="/{{ L }}/pages/{{ currentSlug }}.html">{{ L | upper }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</header>
+

@@ -1,0 +1,48 @@
+<div>
+	<div class="modal-header">
+		<h3 class="modal-title">RANDOM date generator</h3>
+	</div>
+	<div class="modal-body">
+		<ng-form name="myModalDate">
+			<div>
+				<div>
+					Format:
+					{% raw %}
+					<input type="text" ng-model="rangeDateFormat" ng-required="rangeDateFormat" ng-class="{red: myModalDate.rangeDateFormat.$invalid}" ng-trim="false" 
+						maxlength="{{max_length}}" style="text-align: center;"
+						ng-change="random_date=randomDate(dateRangeFrom, dateRangeTo, rangeDateFormat, 'left')" />
+					{% endraw %}
+					<a href="#!batch" ng-click="loadInfo()">
+						<span class="glyphicon glyphicon-info-sign"></span>
+					</a>
+					<br>
+				</div>
+				<div>
+					{% raw %}
+					From: <input ng-model="dateRangeFrom" type="date" max="{{dateRangeTo | date:'yyyy-MM-dd'}}"
+						ng-required="dateRangeTo" ng-class="{red: myModalDate.dateRangeFrom.$invalid}"
+						ng-change="random_date=randomDate(dateRangeFrom, dateRangeTo, rangeDateFormat, 'left')" />
+					To: <input ng-model="dateRangeTo" type="date" ng-required="dateRangeFrom"
+						ng-class="{red: myModalDate.dateRangeTo.$invalid}" min="{{dateRangeFrom | date:'yyyy-MM-dd'}}"
+						ng-change="random_date=randomDate(dateRangeFrom, dateRangeTo, rangeDateFormat, 'left')" />
+					<div>
+						Example: {{random_date}}
+					</div>
+					{% endraw %}
+				</div>
+			</div>
+		</ng-form>
+		<div class="modal-footer">
+			{% raw %}
+			<span class="pull-left" ng-class="getColor()" ng-model="lunghezza">
+				Max Length: {{max_length}} | Usage: {{getUsage()}} | Remaining: {{getRemaining()}}
+			</span>
+			{% endraw %}
+			<!-- <button type="button" class="btn btn-primary" ng-model="cur_index" data-dismiss="modal" ng-disabled="myModalText.$invalid || getRemaining() < 0" ng-click="apply1($index)">Apply</button> -->
+			<button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="apply()"
+				ng-disabled="getRemaining() == max_length || myModalDate.$invalid">
+				Apply
+			</button>
+		</div>
+	</div>
+</div>
