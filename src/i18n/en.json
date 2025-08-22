@@ -1,26 +1,59 @@
 {
-"siteTitle": "Testing Tool Online",
-"nav": {"home": "Home", "howto": "Come si fa", "generator": "Generatore"},
-"pages": {
-"fileBatchGenerator": {
-"title": "File Batch Generator",
-"heading": "Genera file batch",
-"lead": "Crea rapidamente file di test."
-},
-"intro": {"title": "Introduzione", "heading": "Benvenuto"}
-},
-"generate_file": "Generate File",
-"file_name": "File Name",
-"type": "Select record length type",
-"fixed": "Fixed",
-"variable": "Variable",
-"separator": "Separator",
-"eol": "End of line",
-"custom": "Custom",
-"#records": "Number of records to generate",
-"#attributes": "Number of attributes to generate",
-"#columns": "Number of columns",
-"add": "Add",
-"edit": "Edit",
-"delete": "Delete"
+  "siteTitle": "Testing Tool Online",
+  "nav": { "home": "Home", "howto": "How to", "generator": "Generator" },
+  "pages": {
+    "fileBatchGenerator": {
+      "title": "File Batch Generator",
+      "heading": "Generate batch file",
+      "lead": "Create test files quickly."
+    },
+    "intro": { "title": "Introduction", "heading": "Welcome" },
+"index": {
+  "title": "File Batch Generator",
+  "subtitle": "File Batch Generator Online is a web-based tool to automatically create batch files.",
+  "ctaStart": "Start Generating",
+  "useful": {
+    "title": "Useful",
+    "text": "Are you bored to mock-up input files manually!?",
+    "alt1": "File configuration preview",
+    "alt2": "Attributes view preview",
+    "cta": "Open & Save Settings"
+  },
+  "fast": {
+    "title": "Fast",
+    "text": "Extremely fast: 1,000,000 records in less than 1 minute.",
+    "alt": "Generated file example",
+    "cta": "Learn about Security"
+  },
+  "usability": {
+    "title": "Usability",
+    "text": "Save, load and modify your work whenever you need.",
+    "alt": "Save/Load preview",
+    "cta": "Let's start"
+  },
+  "security": {
+    "title": "Security",
+    "text": "Files are generated locally, no server needed. Secure by design."
+  }
 }
+  },
+  "generate_file": "Generate File",
+  "file_name": "File Name",
+  "type": "Select record length type",
+  "fixed": "Fixed",
+  "variable": "Variable",
+  "separator": "Separator",
+  "eol": "End of line",
+  "custom": "Custom",
+  "#records": "Number of records to generate",
+  "#attributes": "Number of attributes to generate",
+  "#columns": "Number of columns",
+  "name": "Name",
+  "data_type": "Data type",
+  "length": "Length",
+  "alignment": "Alignment",
+  "add": "Add",
+  "edit": "Edit",
+  "delete": "Delete"
+}
+

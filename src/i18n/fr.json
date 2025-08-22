@@ -1,0 +1,59 @@
+{
+  "siteTitle": "Testing Tool Online",
+  "nav": { "home": "Accueil", "howto": "Mode d'emploi", "generator": "Générateur" },
+  "pages": {
+    "fileBatchGenerator": {
+      "title": "Générateur de fichiers batch",
+      "heading": "Générer des fichiers batch",
+      "lead": "Créez rapidement des fichiers de test."
+    },
+    "intro": { "title": "Introduction", "heading": "Bienvenue" },
+"index": {
+  "title": "Générateur de fichiers batch",
+  "subtitle": "File Batch Generator Online est un outil Web pour créer automatiquement des fichiers batch.",
+  "ctaStart": "Commencer",
+  "useful": {
+    "title": "Utile",
+    "text": "Marre de préparer manuellement les fichiers d’entrée ?",
+    "alt1": "Aperçu configuration du fichier",
+    "alt2": "Aperçu des attributs",
+    "cta": "Ouvrir & enregistrer les réglages"
+  },
+  "fast": {
+    "title": "Rapide",
+    "text": "Très rapide : 1 000 000 d’enregistrements en moins d’une minute.",
+    "alt": "Exemple de fichier généré",
+    "cta": "En savoir plus sur la sécurité"
+  },
+  "usability": {
+    "title": "Ergonomie",
+    "text": "Enregistrez, chargez et modifiez votre travail à tout moment.",
+    "alt": "Aperçu Enregistrer/Charger",
+    "cta": "C’est parti"
+  },
+  "security": {
+    "title": "Sécurité",
+    "text": "Fichiers générés en local, aucun serveur requis. Sécurisé par conception."
+  }
+}
+  },
+  "generate_file": "Générer le fichier",
+  "file_name": "Nom du fichier",
+  "type": "Type de longueur d’enregistrement",
+  "fixed": "Fixe",
+  "variable": "Variable",
+  "separator": "Séparateur",
+  "eol": "Fin de ligne",
+  "custom": "Personnalisé",
+  "#records": "Nombre d’enregistrements à générer",
+  "#attributes": "Nombre d’attributs à générer",
+  "#columns": "Nombre de colonnes",
+  "name": "Nom",
+  "data_type": "Type de données",
+  "length": "Longueur",
+  "alignment": "Alignement",
+  "add": "Ajouter",
+  "edit": "Modifier",
+  "delete": "Supprimer"
+}
+

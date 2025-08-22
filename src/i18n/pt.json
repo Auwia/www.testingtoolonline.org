@@ -1,0 +1,59 @@
+{
+  "siteTitle": "Testing Tool Online",
+  "nav": { "home": "Início", "howto": "Como fazer", "generator": "Gerador" },
+  "pages": {
+    "fileBatchGenerator": {
+      "title": "Gerador de ficheiros batch",
+      "heading": "Gerar ficheiros batch",
+      "lead": "Crie ficheiros de teste rapidamente."
+    },
+    "intro": { "title": "Introdução", "heading": "Bem-vindo" },
+"index": {
+  "title": "Gerador de ficheiros batch",
+  "subtitle": "File Batch Generator Online é uma ferramenta web para criar ficheiros batch automaticamente.",
+  "ctaStart": "Começar",
+  "useful": {
+    "title": "Útil",
+    "text": "Cansado de maquinar ficheiros de entrada manualmente?",
+    "alt1": "Pré-visualização da configuração",
+    "alt2": "Pré-visualização de atributos",
+    "cta": "Abrir & guardar definições"
+  },
+  "fast": {
+    "title": "Rápido",
+    "text": "Muito rápido: 1.000.000 registos em menos de 1 minuto.",
+    "alt": "Exemplo de ficheiro gerado",
+    "cta": "Saber mais sobre segurança"
+  },
+  "usability": {
+    "title": "Usabilidade",
+    "text": "Guarde, carregue e modifique o seu trabalho quando quiser.",
+    "alt": "Pré-visualização Guardar/Carregar",
+    "cta": "Vamos lá"
+  },
+  "security": {
+    "title": "Segurança",
+    "text": "Os ficheiros são gerados localmente, sem servidor. Seguro por conceção."
+  }
+}
+  },
+  "generate_file": "Gerar ficheiro",
+  "file_name": "Nome do ficheiro",
+  "type": "Tipo de comprimento do registo",
+  "fixed": "Fixo",
+  "variable": "Variável",
+  "separator": "Separador",
+  "eol": "Fim de linha",
+  "custom": "Personalizado",
+  "#records": "Número de registos a gerar",
+  "#attributes": "Número de atributos a gerar",
+  "#columns": "Número de colunas",
+  "name": "Nome",
+  "data_type": "Tipo de dados",
+  "length": "Comprimento",
+  "alignment": "Alinhamento",
+  "add": "Adicionar",
+  "edit": "Editar",
+  "delete": "Eliminar"
+}
+

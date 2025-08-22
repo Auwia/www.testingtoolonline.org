@@ -1,16 +1,59 @@
 {
-"siteTitle": "Testing Tool Online",
-"nav": {"home": "Home", "howto": "Come si fa", "generator": "Generatore"},
-"pages": {
-"fileBatchGenerator": {
-"title": "File Batch Generator",
-"heading": "Genera file batch",
-"lead": "Crea rapidamente file di test."
-},
-"intro": {"title": "Introduzione", "heading": "Benvenuto"}
-},
-"generate_file": "Genera File",
-"add": "Aggiungi",
-"edit": "Edita",
-"delete": "Cancella"
+  "siteTitle": "Testing Tool Online",
+  "nav": { "home": "Home", "howto": "Come si fa", "generator": "Generatore" },
+  "pages": {
+    "fileBatchGenerator": {
+      "title": "Generatore File Batch",
+      "heading": "Genera file batch",
+      "lead": "Crea rapidamente file di test."
+    },
+    "intro": { "title": "Introduzione", "heading": "Benvenuto" },
+"index": {
+  "title": "Generatore File Batch",
+  "subtitle": "File Batch Generator Online è uno strumento web per creare automaticamente file batch.",
+  "ctaStart": "Inizia",
+  "useful": {
+    "title": "Utile",
+    "text": "Sei stanco di preparare a mano i file di input?",
+    "alt1": "Anteprima configurazione file",
+    "alt2": "Anteprima vista attributi",
+    "cta": "Apri & Salva impostazioni"
+  },
+  "fast": {
+    "title": "Veloce",
+    "text": "Velocissimo: 1.000.000 di record in meno di 1 minuto.",
+    "alt": "Esempio di file generato",
+    "cta": "Scopri la Sicurezza"
+  },
+  "usability": {
+    "title": "Usabilità",
+    "text": "Salva, carica e modifica il tuo lavoro quando vuoi.",
+    "alt": "Anteprima Salva/Carica",
+    "cta": "Partiamo"
+  },
+  "security": {
+    "title": "Sicurezza",
+    "text": "I file sono generati in locale, nessun server. Sicuro by design."
+  }
 }
+  },
+  "generate_file": "Genera file",
+  "file_name": "Nome file",
+  "type": "Seleziona tipo lunghezza record",
+  "fixed": "Fisso",
+  "variable": "Variabile",
+  "separator": "Separatore",
+  "eol": "Fine riga",
+  "custom": "Personalizzato",
+  "#records": "Numero di record da generare",
+  "#attributes": "Numero di attributi da generare",
+  "#columns": "Numero di colonne",
+  "name": "Nome",
+  "data_type": "Tipo dato",
+  "length": "Lunghezza",
+  "alignment": "Allineamento",
+  "add": "Aggiungi",
+  "edit": "Modifica",
+  "delete": "Cancella"
+}
+

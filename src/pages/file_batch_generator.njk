@@ -44,7 +44,9 @@ title: "{{ i18n[lang].pages.fileBatchGenerator.title }}"
   </nav>
 
   <form name="myForm">
-    <h3><label for="myForm">{{'title' | translate}}</label></h3>
+<h2 class="text-center" style="color:#b7bcc4; font-weight:600; margin-top:4px; margin-bottom:12px;">
+  {{ i18n[lang].pages.fileBatchGenerator.heading }}
+</h2>
 
 <h1 class="page-title">{{ i18n[lang].pages.fileBatchGenerator.heading }}</h1>
 <p class="lead">{{ i18n[lang].pages.fileBatchGenerator.lead }}</p>
@@ -120,6 +122,7 @@ title: "{{ i18n[lang].pages.fileBatchGenerator.title }}"
     </section>
 
     <section>
+      <div class="table-responsive">
       <table id="table_conf" style="margin-left: 1%; margin-top: 1%;">
         <tr>
           <th># <span class="glyphicon glyphicon-move" style="opacity:.5;"></span></th>

@@ -1,0 +1,59 @@
+{
+  "siteTitle": "Testing Tool Online",
+  "nav": { "home": "Start", "howto": "Anleitung", "generator": "Generator" },
+  "pages": {
+    "fileBatchGenerator": {
+      "title": "Stapeldatei-Generator",
+      "heading": "Stapeldateien erzeugen",
+      "lead": "Erstellen Sie schnell Testdateien."
+    },
+    "intro": { "title": "Einführung", "heading": "Willkommen" },
+"index": {
+  "title": "Stapeldatei-Generator",
+  "subtitle": "File Batch Generator Online ist ein webbasiertes Tool zur automatischen Erstellung von Stapeldateien.",
+  "ctaStart": "Jetzt starten",
+  "useful": {
+    "title": "Nützlich",
+    "text": "Sind Sie es leid, Eingabedateien manuell zu erstellen?",
+    "alt1": "Vorschau Dateikonfiguration",
+    "alt2": "Vorschau Attributansicht",
+    "cta": "Einstellungen öffnen & speichern"
+  },
+  "fast": {
+    "title": "Schnell",
+    "text": "Extrem schnell: 1.000.000 Datensätze in weniger als 1 Minute.",
+    "alt": "Beispiel erzeugte Datei",
+    "cta": "Mehr zur Sicherheit"
+  },
+  "usability": {
+    "title": "Benutzbarkeit",
+    "text": "Speichern, laden und bearbeiten Sie Ihre Arbeit jederzeit.",
+    "alt": "Vorschau Speichern/Laden",
+    "cta": "Los geht’s"
+  },
+  "security": {
+    "title": "Sicherheit",
+    "text": "Dateien werden lokal erzeugt, kein Server nötig. Sicher by design."
+  }
+}
+  },
+  "generate_file": "Datei erzeugen",
+  "file_name": "Dateiname",
+  "type": "Satzlänge auswählen",
+  "fixed": "Fest",
+  "variable": "Variabel",
+  "separator": "Trennzeichen",
+  "eol": "Zeilenende",
+  "custom": "Benutzerdefiniert",
+  "#records": "Anzahl Datensätze",
+  "#attributes": "Anzahl Attribute",
+  "#columns": "Anzahl Spalten",
+  "name": "Name",
+  "data_type": "Datentyp",
+  "length": "Länge",
+  "alignment": "Ausrichtung",
+  "add": "Hinzufügen",
+  "edit": "Bearbeiten",
+  "delete": "Löschen"
+}
+

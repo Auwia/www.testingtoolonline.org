@@ -1,0 +1,59 @@
+{
+  "siteTitle": "Testing Tool Online",
+  "nav": { "home": "Inicio", "howto": "Cómo se hace", "generator": "Generador" },
+  "pages": {
+    "fileBatchGenerator": {
+      "title": "Generador de archivos por lotes",
+      "heading": "Generar archivos por lote",
+      "lead": "Cree archivos de prueba rápidamente."
+    },
+    "intro": { "title": "Introducción", "heading": "Bienvenido" },
+"index": {
+  "title": "Generador de archivos por lotes",
+  "subtitle": "File Batch Generator Online es una herramienta web para crear archivos por lotes automáticamente.",
+  "ctaStart": "Empezar",
+  "useful": {
+    "title": "Útil",
+    "text": "¿Cansado de maquetar a mano los archivos de entrada?",
+    "alt1": "Vista previa de configuración de archivo",
+    "alt2": "Vista previa de atributos",
+    "cta": "Abrir y guardar ajustes"
+  },
+  "fast": {
+    "title": "Rápido",
+    "text": "Muy rápido: 1.000.000 de registros en menos de 1 minuto.",
+    "alt": "Ejemplo de archivo generado",
+    "cta": "Conocer la seguridad"
+  },
+  "usability": {
+    "title": "Usabilidad",
+    "text": "Guarda, carga y modifica tu trabajo cuando quieras.",
+    "alt": "Vista previa Guardar/Cargar",
+    "cta": "Vamos"
+  },
+  "security": {
+    "title": "Seguridad",
+    "text": "Los archivos se generan localmente, sin servidor. Seguro por diseño."
+  }
+}
+  },
+  "generate_file": "Generar archivo",
+  "file_name": "Nombre del archivo",
+  "type": "Tipo de longitud del registro",
+  "fixed": "Fija",
+  "variable": "Variable",
+  "separator": "Separador",
+  "eol": "Fin de línea",
+  "custom": "Personalizado",
+  "#records": "Número de registros a generar",
+  "#attributes": "Número de atributos a generar",
+  "#columns": "Número de columnas",
+  "name": "Nombre",
+  "data_type": "Tipo de datos",
+  "length": "Longitud",
+  "alignment": "Alineación",
+  "add": "Añadir",
+  "edit": "Editar",
+  "delete": "Eliminar"
+}
+

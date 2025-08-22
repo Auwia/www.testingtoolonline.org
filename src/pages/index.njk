@@ -8,46 +8,68 @@ permalink: "/{{ lang }}/pages/index.html"
 pageSlug: "index"
 title: "{{ i18n[lang].siteTitle }}"
 ---
-
-<h1 class="page-title">File Batch Generator</h1>
+<h1 class="page-title">{% raw %}{{ 'pages.index.title' | translate }}{% endraw %}</h1>
 
 <div class="container">
-  <div class="main gen-table-wrap">
-    <p class="lead">
-      File Batch Generator Online is a web-based tool to create automatically batch file...
+  <section class="ttol-panel">
+    <p class="lead" style="margin-top:0;">
+      {% raw %}{{ 'pages.index.subtitle' | translate }}{% endraw %}
     </p>
 
-    {# blocco demo principale (quello già presente della tua app) #}
+    <p>
+      <a class="btn btn-primary" href="/{{ lang }}/pages/file_batch_generator.html">
+        {% raw %}<span class="glyphicon glyphicon-play"></span> {{ 'pages.index.ctaStart' | translate }}{% endraw %}
+      </a>
+    </p>
+
     {{ content | safe }}
-
-    <p><a class="btn" href="/{{ lang }}/pages/file_batch_generator.html">Start Generating</a></p>
-  </div>
-
-  {# sezioni promo come in home #}
-  <section class="gen-table-wrap">
-    <h2>Useful</h2>
-    <p>Are you bored to mock-up input files manually!?</p>
-    <img src="/assets/img/file_configuration.png" alt="file config" width="359" height="233" loading="lazy" decoding="async">
-    <img src="/assets/img/attributes_view.png" alt="attributes view" width="755" height="270" loading="lazy" decoding="async">
-    <p><a class="btn" href="/{{ lang }}/pages/file_batch_generator.html">Open & Save Settings</a></p>
   </section>
 
   <section class="gen-table-wrap">
-    <h2>Fast</h2>
-    <p>Extremely fast: 1.000.000 records simulation in less than 1 minute.</p>
-    <img src="/assets/img/file_generated.png" alt="generated example" width="645" height="509" loading="lazy" decoding="async">
-    <p><a class="btn" href="/{{ lang }}/pages/file_batch_generator.html">Learn about Security</a></p>
+    <h2>{% raw %}{{ 'pages.index.useful.title' | translate }}{% endraw %}</h2>
+    <p>{% raw %}{{ 'pages.index.useful.text' | translate }}{% endraw %}</p>
+    <img src="/assets/img/file_configuration.png"
+         alt="{% raw %}{{ 'pages.index.useful.alt1' | translate }}{% endraw %}"
+         width="359" height="233" loading="lazy" decoding="async">
+    <img src="/assets/img/attributes_view.png"
+         alt="{% raw %}{{ 'pages.index.useful.alt2' | translate }}{% endraw %}"
+         width="755" height="270" loading="lazy" decoding="async">
+    <p>
+      <a class="btn" href="/{{ lang }}/pages/file_batch_generator.html">
+        {% raw %}{{ 'pages.index.useful.cta' | translate }}{% endraw %}
+      </a>
+    </p>
   </section>
 
   <section class="gen-table-wrap">
-    <h2>Usability</h2>
-    <p>Save, load and modify your own work when you want fastly.</p>
-    <img src="/assets/img/save_load.png" alt="Save/load" width="163" height="77" loading="lazy" decoding="async">
-    <p><a class="btn" href="/{{ lang }}/pages/file_batch_generator.html">Let's start</a></p>
+    <h2>{% raw %}{{ 'pages.index.fast.title' | translate }}{% endraw %}</h2>
+    <p>{% raw %}{{ 'pages.index.fast.text' | translate }}{% endraw %}</p>
+    <img src="/assets/img/file_generated.png"
+         alt="{% raw %}{{ 'pages.index.fast.alt' | translate }}{% endraw %}"
+         width="645" height="509" loading="lazy" decoding="async">
+    <p>
+      <a class="btn" href="/{{ lang }}/pages/file_batch_generator.html">
+        {% raw %}{{ 'pages.index.fast.cta' | translate }}{% endraw %}
+      </a>
+    </p>
   </section>
 
   <section class="gen-table-wrap">
-    <h2>Security</h2>
-    <p>Files are generated locally, no server needed. Secure by design.</p>
+    <h2>{% raw %}{{ 'pages.index.usability.title' | translate }}{% endraw %}</h2>
+    <p>{% raw %}{{ 'pages.index.usability.text' | translate }}{% endraw %}</p>
+    <img src="/assets/img/save_load.png"
+         alt="{% raw %}{{ 'pages.index.usability.alt' | translate }}{% endraw %}"
+         width="163" height="77" loading="lazy" decoding="async">
+    <p>
+      <a class="btn" href="/{{ lang }}/pages/file_batch_generator.html">
+        {% raw %}{{ 'pages.index.usability.cta' | translate }}{% endraw %}
+      </a>
+    </p>
+  </section>
+
+  <section class="gen-table-wrap">
+    <h2>{% raw %}{{ 'pages.index.security.title' | translate }}{% endraw %}</h2>
+    <p>{% raw %}{{ 'pages.index.security.text' | translate }}{% endraw %}</p>
   </section>
 </div>
+

@@ -1,0 +1,142 @@
+/* ===== Layout/contesto */
+body {
+  background: #f6f7fb;
+}
+
+/* Barra menu in alto */
+.ttol-menu {
+  background: #3e3e3e;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin: 12px 0 16px;
+}
+.ttol-menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -ms-flexbox;      /* IE11 */
+  display: flex;
+  -ms-flex-wrap: wrap;        /* IE11 */
+  flex-wrap: wrap;
+}
+.ttol-menu-list li { margin: 4px 12px 4px 0; }
+.ttol-menu .btn {
+  color: #fff;
+  text-decoration: none;
+  padding: 4px 8px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.ttol-menu .btn:hover {
+  background: rgba(255,255,255,.08);
+  text-decoration: none;
+}
+
+/* Card contenitore */
+.ttol-panel {
+  background: #fff;
+  border: 1px solid #e6e8ef;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(16,24,40,.04), 0 1px 1px rgba(16,24,40,.02);
+  padding: 16px;
+}
+
+/* Pulsanti principali (Bootstrap 3 è caricato, ma affiniamo) */
+.btn-primary {
+  background-color: #2d6cdf;
+  border-color: #2a62c8;
+}
+.btn-primary[disabled],
+.btn-primary[disabled]:hover {
+  background-color: #9fb8f2;
+  border-color: #9fb8f2;
+}
+
+/* Spaziatura form */
+.ttol-panel label { margin: 6px 0 4px; display: inline-block; }
+.ttol-panel input[type="text"],
+.ttol-panel input[type="number"],
+.ttol-panel select {
+  height: 30px; padding: 4px 8px;
+}
+
+/* Tabella di configurazione */
+.table-responsive { overflow-x: auto; }  /* per mobile/schermi piccoli */
+
+#table_conf {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  background: #fff;
+}
+#table_conf th, #table_conf td {
+  border: 1px solid #dfe3ea;
+  padding: 6px 8px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+#table_conf th {
+  background: #f1f3f7;
+  font-weight: 600;
+}
+#table_conf tr:nth-child(even) td {
+  background: #fafbfe;
+}
+
+/* Colonne piccole (#, add, azioni) */
+#table_conf th:first-child, #table_conf td:first-child { width: 60px; text-align: center; }
+#table_conf th:last-child,  #table_conf td:last-child  { width: 110px; text-align: center; }
+
+/* Handle drag (solo l'icona è draggable) */
+.drag-handle { cursor: move; color: #6b7280; }
+.drag-handle:hover { color: #374151; }
+
+/* Icone di allineamento più “soft” */
+.glyphicon-align-left, .glyphicon-align-right { color: #6b7280; }
+input[type="radio"]:checked + .glyphicon { color: #111827; }
+
+/* Link “add / delete / edit” stilizzati */
+#table_conf a {
+  color: #2d6cdf;
+  text-decoration: none;
+}
+#table_conf a:hover { text-decoration: underline; }
+
+/* Piccoli badge/icone */
+#table_conf .glyphicon { font-size: 14px; }
+
+/* ====== LOOK "CLASSIC" vicino all'originale ====== */
+.ttol-menu.classic {
+  background: #5a5a5a;           /* barra più bassa */
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+.ttol-menu.classic .ttol-menu-list {
+  -ms-flex-pack: end; justify-content: flex-end; /* destra */
+}
+.ttol-menu.classic .btn {
+  border: 1px solid #6b6b6b;
+  background: #6b6b6b;
+  padding: 4px 10px;
+  border-radius: 3px;
+}
+.ttol-menu.classic .btn:hover { background: #787878; }
+
+/* Titoli come original */
+.page-title, h1, h3 { color:#333; }
+.ttol-panel { padding-top: 12px; }
+
+/* Tabella più “classic” */
+#table_conf th { background: #e8ebf0; color:#333; }
+#table_conf td { background: #fff; }
+#table_conf tr:nth-child(even) td { background: #f6f7fb; }
+
+/* Input compatti */
+.ttol-panel input[type="text"],
+.ttol-panel input[type="number"],
+.ttol-panel select { height:28px; }
+
+/* Pulsante generate meno “grosso” */
+.btn.btn-primary { padding: 6px 10px; }
+
