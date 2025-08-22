@@ -235,3 +235,7 @@ img {
 .ttol-menu a { color:#fff; text-decoration:none; }
 .ttol-menu a:hover { text-decoration:underline; }
 
+/* Evita trascinamenti involontari */
+#table_conf tr .drag-handle { cursor: move; }
+#table_conf tr { cursor: default; }
+

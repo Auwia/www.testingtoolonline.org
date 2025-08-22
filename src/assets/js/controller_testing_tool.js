@@ -45,6 +45,7 @@ testApp.controller('recordCtrl', ['$scope', '$uibModal', function($scope, $uibMo
 			axis: 'y',
 			dropOnEmpty: true,
 			placeholder: "sortable-placeholder",
+                        handle: '.drag-handle',
 			start: function(e, ui) {
 				ui.item.addClass("selected");
 				$scope.index_start = ui.item.index();
@@ -239,7 +240,8 @@ testApp.controller('recordCtrl', ['$scope', '$uibModal', function($scope, $uibMo
             eol_custom: $scope.eol_custom,
             table_structure: $scope.records
           };
-          // salva SOLO su file (niente cookie / localStorage)
+          var name = ($scope.fileName && $scope.fileName.trim()) ? $scope.fileName.trim() : "config";
+          if (!/\.json$/i.test(name)) name += ".json";
           saveTextAsFile(JSON.stringify(obj), $scope.fileName);
         };
 
@@ -478,11 +480,35 @@ testApp.controller('recordCtrl', ['$scope', '$uibModal', function($scope, $uibMo
 		return text;
 	}
 
+        // Apre un $uibModal e mette il focus sul primo campo
+        function openModalAndAutofocus(opts) {
+          if (!opts) opts = {};
+          if (!opts.appendTo) opts.appendTo = angular.element(document.body);
+        
+          // catturo il riferimento originale a $uibModal.open
+          var _uiOpen = $uibModal.open.bind($uibModal);
+        
+          var inst = _uiOpen(opts);
+        
+          inst.opened.then(function () {
+            setTimeout(function () {
+              // focus sul primo campo del modale aperto più di recente
+              var dialogs = document.querySelectorAll('.modal.in .modal-dialog, .modal .modal-dialog');
+              var dlg = dialogs[dialogs.length - 1];
+              if (!dlg) return;
+              var el = dlg.querySelector('input,select,textarea,button');
+              if (el && el.focus) el.focus();
+            }, 0);
+          });
+        
+          return inst;
+        }
+
 	$scope.loadModal = function(index, kind, max_length, records) {
                 try { var ae = document.activeElement; if (ae && ae.blur) ae.blur(); } catch(e) {}
 
 		if (kind == 'text') {
-			$uibModal.open({
+			openModalAndAutofocus({
                                 appendTo: angular.element(document.body),
 				templateUrl: 'modalTextFormatHelper.html',
 				controller: function($scope) {
@@ -528,7 +554,7 @@ testApp.controller('recordCtrl', ['$scope', '$uibModal', function($scope, $uibMo
 			}).result.then(function() {}, function() {});
 		}
 		if (kind == 'number') {
-			$uibModal.open({
+			openModalAndAutofocus({
                                 appendTo: angular.element(document.body),
 				templateUrl: 'modalNumberFormatHelper.html',
 				controller: function($scope) {
@@ -604,7 +630,7 @@ testApp.controller('recordCtrl', ['$scope', '$uibModal', function($scope, $uibMo
 			}).result.then(function() {}, function() {});;
 		}
 		if (kind == 'date') {
-			$uibModal.open({
+			openModalAndAutofocus({
                                 appendTo: angular.element(document.body),
 				templateUrl: 'modalDateFormatHelper.html',
 				controller: function($scope) {
@@ -644,7 +670,7 @@ testApp.controller('recordCtrl', ['$scope', '$uibModal', function($scope, $uibMo
 						return moment(new Date(start + Math.random() * (end - start))).format(format);
 					};
 					$scope.loadInfo = function() {
-						$uibModal.open({
+						openModalAndAutofocus({
                                                         appendTo: angular.element(document.body),
 							templateUrl: 'modalInfo.html',
 							controller: '',
@@ -656,7 +682,7 @@ testApp.controller('recordCtrl', ['$scope', '$uibModal', function($scope, $uibMo
 			}).result.then(function() {}, function() {}); 
 		}
 		if (kind == 'help') {
-			$uibModal.open({
+			openModalAndAutofocus({
                                 appendTo: angular.element(document.body),
 				templateUrl: 'modalHelp.html',
 				controller: 'recordCtrl',

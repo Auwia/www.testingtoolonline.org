@@ -49,25 +49,6 @@ title: "{{ i18n[lang].pages.fileBatchGenerator.title }}"
 <h1 class="page-title">{{ i18n[lang].pages.fileBatchGenerator.heading }}</h1>
 <p class="lead">{{ i18n[lang].pages.fileBatchGenerator.lead }}</p>
 
-<!-- Toolbar config (usa funzioni già presenti nel controller) -->
-<section class="ttol-toolbar">
-  <a href=""
-     class="btn btn-default"
-     role="button"
-     ng-click="$event.preventDefault(); saveConf()">
-    <span class="glyphicon glyphicon-floppy-disk"></span>
-    Save config
-  </a>
-
-  <a href=""
-     class="btn btn-default"
-     role="button"
-     ng-click="$event.preventDefault(); uploadFile()">
-    <span class="glyphicon glyphicon-folder-open"></span>
-    Load from file
-  </a>
-</section>
-
     <section>
       <label for="myFileName">{{'file_name' | translate}}</label>
       <input style="margin: 8px;" type="text" id="myFileName" ng-model="fileName" placeholder="filename" />
@@ -141,7 +122,7 @@ title: "{{ i18n[lang].pages.fileBatchGenerator.title }}"
     <section>
       <table id="table_conf" style="margin-left: 1%; margin-top: 1%;">
         <tr>
-          <th>#</th>
+          <th># <span class="glyphicon glyphicon-move" style="opacity:.5;"></span></th>
           <th style="min-width: 70px;" class="center">
             <input type="checkbox" ng-click="editAll()" id="editAll" ng-model="checked" />
             <label for="editAll">(<span class="glyphicon glyphicon-pencil"></span>)</label>
@@ -155,8 +136,10 @@ title: "{{ i18n[lang].pages.fileBatchGenerator.title }}"
           </th>
         </tr>
 
-        <tr ng-repeat="record in records" class="item" style="cursor: move;">
-          <td>{{$index+1}}</td>
+        <tr ng-repeat="record in records" class="item" >
+          <td class="center">{{$index+1}}<span class="glyphicon glyphicon-move drag-handle"
+        title="Drag"
+        style="margin-left:6px; cursor:move;"></span></td>
           <td class="center"><input type="checkbox" ng-model="record.checked" ng-change="editSingle()" /></td>
           <td><input type="text" ng-model="record.name" ng-disabled="!record.checked" required /></td>
           <td class="center">

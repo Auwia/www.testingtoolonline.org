@@ -7,12 +7,13 @@ eleventyConfig.addPassthroughCopy({ "src/redirects": "/" });
 eleventyConfig.addPassthroughCopy({ "src/service_worker.js": "service_worker.js" });
 eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
 eleventyConfig.addPassthroughCopy({ "src/assets/img/favicon.ico": "favicon.ico" });
-eleventyConfig.addPassthroughCopy({ "src/assets/img/favicon-96x96.ico": "favicon-96x96.ico" });
 eleventyConfig.addPassthroughCopy({ "src/assets/img/favicon-16x16.ico": "favicon-16x16.ico" });
+eleventyConfig.addPassthroughCopy({ "src/assets/img/favicon-32x32.ico": "favicon-32x32.ico" });
+eleventyConfig.addPassthroughCopy({ "src/assets/img/favicon-96x96.ico": "favicon-96x96.ico" });
+
 eleventyConfig.addGlobalData("currentYear", () => {
     return new Date().getFullYear();
   });
-
 
 // Watch extra (opzionale)
 eleventyConfig.addWatchTarget("src/assets");
