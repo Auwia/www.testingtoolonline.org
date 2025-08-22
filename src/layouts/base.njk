@@ -6,17 +6,18 @@
   <title>{{ i18n[lang].siteTitle }} – {{ title }}</title>
   <meta name="description" content="{{ description or i18n[lang].meta.description or i18n[lang].siteTagline }}">
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.ico">
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.ico">
 
-  {# Se NON hai definito il filtro |rev in Eleventy, usa la riga sotto al suo posto #}
-  <link rel="stylesheet" href="/assets/css/main.min.css">
-  {# <link rel="stylesheet" href="{{ '/assets/css/main.min.css' | rev }}"> #}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <!-- Polyfill per IE11 (Promise, Object.assign, includes, startsWith, ecc.) -->
+  <!--[if IE 11]>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default,es5,es6,Promise,Object.assign,Array.prototype.includes,String.prototype.startsWith,String.prototype.endsWith"></script>
+  <![endif]-->
+  <link rel="stylesheet" href="{{ '/assets/css/main.min.css' | rev }}">
 
   <link rel="manifest" href="/assets/manifest.json">
 
@@ -39,7 +40,6 @@
 
   <!-- JS (defer dove possibile) -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular-cookies.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.6/ui-bootstrap-tpls.min.js"></script>
   <script src="/assets/lib/moment.js" defer></script>
   <script>

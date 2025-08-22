@@ -226,3 +226,12 @@ img {
   .site-header nav a { padding: 4px 6px; }
 }
 
+.ttol-toolbar { margin:12px 0; }
+.ttol-toolbar .btn { margin-right:8px; margin-bottom:8px; } /* niente gap: IE11 non lo supporta */
+
+.ttol-menu { background:#4d4d4d; color:#fff; padding:6px 10px; margin-bottom:12px; }
+.ttol-menu-list { list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; }
+.ttol-menu-list li { margin-right:16px; }
+.ttol-menu a { color:#fff; text-decoration:none; }
+.ttol-menu a:hover { text-decoration:underline; }
+

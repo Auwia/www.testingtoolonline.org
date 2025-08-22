@@ -12,14 +12,61 @@ title: "{{ i18n[lang].pages.fileBatchGenerator.title }}"
 <h1 class="page-title">{{ i18n[lang].pages.fileBatchGenerator.heading }}</h1>
 <p class="lead">{{ i18n[lang].pages.fileBatchGenerator.lead }}</p>
 
-{# 
-  ⬇️ IMPORTANTE: tutto il markup Angular viene messo in raw così Eleventy/Nunjucks NON lo processa.
-  Lasciamo quindi intatti {{ 'key' | translate }} e direttive ng-*
-#}
 {% raw %}
 <div ng-controller="recordCtrl">
+  <nav class="ttol-menu" aria-label="Batch actions">
+    <ul class="ttol-menu-list">
+      <li>
+        <a href="" class="btn btn-link"
+           ng-click="$event.preventDefault(); reset()">
+          <span class="glyphicon glyphicon-file"></span> New
+        </a>
+      </li>
+      <li>
+        <a href="" class="btn btn-link"
+           ng-click="$event.preventDefault(); uploadFile()">
+          <span class="glyphicon glyphicon-folder-open"></span> Open
+        </a>
+      </li>
+      <li>
+        <a href="" class="btn btn-link"
+           ng-click="$event.preventDefault(); saveConf()">
+          <span class="glyphicon glyphicon-floppy-disk"></span> Save
+        </a>
+      </li>
+      <li>
+        <a href="" class="btn btn-link"
+           ng-click="$event.preventDefault(); loadModal(null, 'help')">
+          <span class="glyphicon glyphicon-question-sign"></span> Help
+        </a>
+      </li>
+    </ul>
+  </nav>
+
   <form name="myForm">
     <h3><label for="myForm">{{'title' | translate}}</label></h3>
+
+<h1 class="page-title">{{ i18n[lang].pages.fileBatchGenerator.heading }}</h1>
+<p class="lead">{{ i18n[lang].pages.fileBatchGenerator.lead }}</p>
+
+<!-- Toolbar config (usa funzioni già presenti nel controller) -->
+<section class="ttol-toolbar">
+  <a href=""
+     class="btn btn-default"
+     role="button"
+     ng-click="$event.preventDefault(); saveConf()">
+    <span class="glyphicon glyphicon-floppy-disk"></span>
+    Save config
+  </a>
+
+  <a href=""
+     class="btn btn-default"
+     role="button"
+     ng-click="$event.preventDefault(); uploadFile()">
+    <span class="glyphicon glyphicon-folder-open"></span>
+    Load from file
+  </a>
+</section>
 
     <section>
       <label for="myFileName">{{'file_name' | translate}}</label>
@@ -149,9 +196,17 @@ title: "{{ i18n[lang].pages.fileBatchGenerator.title }}"
     </div>
 
     <!-- Modal placeholders -->
-    <div id="modalFormatHelper" class="modal fade"></div>
-    <div id="modalInfo" class="modal fade text-left"></div>
-    <div id="modalHelp" class="modal fade"></div>
+    <div id="modalFormatHelper" class="modal fade" aria-hidden="true">
+      {% include "../assets/pages/modalFormatHelper_old_tabs.html" %}
+    </div>
+    
+    <div id="modalInfo" class="modal fade text-left" aria-hidden="true">
+      {% include "../assets/pages/modalInfo.html" %}
+    </div>
+    
+    <div id="modalHelp" class="modal fade" aria-hidden="true">
+      {% include "../assets/pages/modalHelp.html" %}
+    </div>
   </form>
 </div>
 {% endraw %}

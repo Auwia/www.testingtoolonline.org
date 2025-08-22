@@ -1,4 +1,4 @@
-testApp.controller('recordCtrl', ['$scope', '$cookies', '$uibModal', function($scope, $cookies, $uibModal) {
+testApp.controller('recordCtrl', ['$scope', '$uibModal', function($scope, $uibModal) {
 	$scope.Math = Math;
 	$scope.records = [];
 	$scope.value = 20;
@@ -12,6 +12,31 @@ testApp.controller('recordCtrl', ['$scope', '$cookies', '$uibModal', function($s
 	$scope.contCounter = 0;
 	$scope.types = ["text", "date", "number"];
 	$scope.date = new Date();
+
+        function serializeConfig($scope) {
+          return {
+            version: "1.0",
+            fileName: $scope.fileName || "",
+            rows_number: $scope.nRows || 1,
+            length_type: $scope.length_type || "Fixed",
+            separator: $scope.separator || "",
+            eol: $scope.eol,
+            eol_custom: $scope.eol_custom,
+            table_structure: angular.copy($scope.records || [])
+          };
+        }
+        
+        function applyConfig($scope, cfg) {
+          if (!cfg) return;
+          $scope.fileName   = cfg.fileName || "";
+          $scope.nRows      = parseInt(cfg.rows_number, 10) || 1;
+          $scope.length_type= cfg.length_type || "Fixed";
+          $scope.separator  = typeof cfg.separator === "string" ? cfg.separator : "";
+          $scope.eol        = cfg.eol;
+          $scope.eol_custom = cfg.eol_custom;
+          $scope.records    = angular.isArray(cfg.table_structure) ? cfg.table_structure : [];
+          $scope.nColumns   = $scope.records.length || 1;
+        }
 	
 	$(function() {
 		$("#table_conf").sortable({
@@ -203,39 +228,20 @@ testApp.controller('recordCtrl', ['$scope', '$cookies', '$uibModal', function($s
 		$scope.records.splice(index, 1);
 	};
 
-	$scope.saveConf = function() {
-		$cookies.put('file_name', $scope.fileName);
-		$cookies.put('rows_number', $scope.nRows);
-		$cookies.put('length_type', $scope.length_type);
-		$cookies.put('separator', $scope.separator);
-		$cookies.put('eol', $scope.eol);
-		$cookies.put('eol_custom', $scope.eol_custom);
-		$cookies.putObject('table_structure', $scope.records);
-		var obj = {
-			version: "1.0",
-			fileName: $scope.fileName,
-			rows_number: $scope.nRows,
-			length_type: $scope.length_type,
-			separator: $scope.separator,
-			eol: $scope.eol,
-			eol_custom: $scope.eol_custom,
-			table_structure: $scope.records
-		};
-		JSON.parse(JSON.stringify(obj));
-		saveTextAsFile(JSON.stringify(obj), $scope.fileName);
-	}
-
-	$scope.loadConf = function() {
-		$scope.fileName = $cookies.get('file_name');
-		$scope.nRows = parseInt($cookies.get('rows_number'), 10);
-		$scope.length_type = $cookies.get('length_type');
-		$scope.separator = $cookies.get('separator');
-		$scope.eol = $cookies.get('eol');
-		$scope.eol_custom = $cookies.get('eol_custom');
-		$scope.records = [];
-		$scope.records = $cookies.getObject('table_structure');
-		console.log($scope.fileName + " - " + $scope.nRows + " - " + $scope.length_type + " - " + $scope.separator + " - " + $scope.eol + " - " + $scope.eol_custom + " - " + $scope.records);
-	}
+        $scope.saveConf = function() {
+          var obj = {
+            version: "1.0",
+            fileName: $scope.fileName,
+            rows_number: $scope.nRows,
+            length_type: $scope.length_type,
+            separator: $scope.separator,
+            eol: $scope.eol,
+            eol_custom: $scope.eol_custom,
+            table_structure: $scope.records
+          };
+          // salva SOLO su file (niente cookie / localStorage)
+          saveTextAsFile(JSON.stringify(obj), $scope.fileName);
+        };
 
 	$scope.uploadFile = function() {
 		var input = document.createElement('input');
@@ -473,8 +479,11 @@ testApp.controller('recordCtrl', ['$scope', '$cookies', '$uibModal', function($s
 	}
 
 	$scope.loadModal = function(index, kind, max_length, records) {
+                try { var ae = document.activeElement; if (ae && ae.blur) ae.blur(); } catch(e) {}
+
 		if (kind == 'text') {
 			$uibModal.open({
+                                appendTo: angular.element(document.body),
 				templateUrl: 'modalTextFormatHelper.html',
 				controller: function($scope) {
 					$scope.max_length = records[index].max_length;
@@ -520,6 +529,7 @@ testApp.controller('recordCtrl', ['$scope', '$cookies', '$uibModal', function($s
 		}
 		if (kind == 'number') {
 			$uibModal.open({
+                                appendTo: angular.element(document.body),
 				templateUrl: 'modalNumberFormatHelper.html',
 				controller: function($scope) {
 					$scope.max_length = records[index].max_length;
@@ -595,6 +605,7 @@ testApp.controller('recordCtrl', ['$scope', '$cookies', '$uibModal', function($s
 		}
 		if (kind == 'date') {
 			$uibModal.open({
+                                appendTo: angular.element(document.body),
 				templateUrl: 'modalDateFormatHelper.html',
 				controller: function($scope) {
 					$scope.max_length = records[index].max_length;
@@ -634,6 +645,7 @@ testApp.controller('recordCtrl', ['$scope', '$cookies', '$uibModal', function($s
 					};
 					$scope.loadInfo = function() {
 						$uibModal.open({
+                                                        appendTo: angular.element(document.body),
 							templateUrl: 'modalInfo.html',
 							controller: '',
 							size: 'auto'
@@ -645,6 +657,7 @@ testApp.controller('recordCtrl', ['$scope', '$cookies', '$uibModal', function($s
 		}
 		if (kind == 'help') {
 			$uibModal.open({
+                                appendTo: angular.element(document.body),
 				templateUrl: 'modalHelp.html',
 				controller: 'recordCtrl',
 				size: 'auto'

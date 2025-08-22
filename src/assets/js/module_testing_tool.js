@@ -1,4 +1,4 @@
-var testApp = angular.module('testApp', ['ngCookies', 'ui.bootstrap']);
+var testApp = angular.module('testApp', ['ui.bootstrap']);
 
 // Filtro translate: legge da window.I18N[window.CURRENT_LANG]
 testApp.filter('translate', [function () {
