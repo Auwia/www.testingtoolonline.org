@@ -1,0 +1,7 @@
+Allow: /
+User-agent: *
+Disallow:
+Host: www.testingtoolonline.org
+Sitemap: https://www.testingtoolonline.org/sitemap.xml
+Sitemap: https://www.testingtoolonline.org/sitemap_with_ru.xml
+
